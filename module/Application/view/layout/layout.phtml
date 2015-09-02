@@ -1,0 +1,68 @@
+<?php echo $this->doctype(); ?>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <?php echo $this->headTitle($this->translate('Web studio "My-site"'))->setSeparator(' - ')->setAutoEscape(false) ?>
+
+        <?php echo $this->headMeta()
+            ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+            ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+        ?>
+
+        <!-- Le styles -->
+        <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'))
+                        ->prependStylesheet($this->basePath('css/teamplate.css'))
+                        ->prependStylesheet(array( 'href' => 'http://fonts.googleapis.com/css?family=Ubuntu:300', 'rel' => 'stylesheet', 'type' => 'text/css'))
+
+        ?>
+
+        <!-- Scripts -->
+        <?php echo $this->headScript()
+            ->prependFile($this->basePath('js/bootstrap.min.js'))
+            ->prependFile("http://cdn.jsdelivr.net/mousewheel/3.0.6/jquery.mousewheel.min.js")
+            ->prependFile($this->basePath('js/account.js'))
+            ->prependFile($this->basePath('js/jquery.min.js'))
+            ->prependFile($this->basePath('js/respond.min.js'), 'text/javascript', array('conditional' => 'lt IE 9',))
+            ->prependFile($this->basePath('js/html5shiv.min.js'),   'text/javascript', array('conditional' => 'lt IE 9',))
+        ; ?>
+
+    </head>
+<body>
+    <?php echo $this->content; ?>
+    <script type="text/javascript">
+        $('#parallax').bind( 'mousewheel', function (event, delta) {
+            var nt = $('#parallax').scrollTop()-(delta*233);
+            event.preventDefault();
+            event.stopPropagation();
+            $('#parallax').stop().animate( {
+                scrollTop : nt
+            } , 500);
+
+        });
+
+        $('#top').click(function () {
+                $('#parallax').stop().animate({scrollTop: 0}, '1000', 'swing');
+        });
+
+        $('#parallax').scroll(function () {
+            $('#parallax').scrollLeft(0);
+            if ($('#parallax').scrollTop() > 450) {
+                $('#top').fadeIn();
+            } else {
+                $('#top').fadeOut();
+            }
+        });
+
+        var x;
+        function slider(x) {
+            $('#portfolio').stop().animate({scrollLeft: (x - 1) * 1053}, 1000, 'swing');
+        };
+
+
+
+    </script>
+</body>
+    <?php echo $this->inlineScript() ?>
+
+</html>

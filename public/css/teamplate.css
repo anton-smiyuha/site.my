@@ -1,0 +1,248 @@
+*,body {
+    margin:0;
+    padding: 0;
+    font-family: 'Ubuntu', sans-serif;
+
+}
+.parallax__group {
+
+    margin-left: -10px;
+    width: 100vh;
+    position: relative;
+    transform-style: preserve-3d;
+}
+#parallax {
+    perspective: 300px;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.parallax__layer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.parallax__layer--base {
+    transform: translateZ(0);
+    z-index: 300;
+}
+.parallax__layer--back {
+    transform: translateZ(-300px) scale(2);
+}
+#group_1 .parallax__layer--back{
+    height: 1500px;
+    background: url("http://livedemo00.template-help.com/wordpress_53677/wp-content/uploads/2015/04/parallax-1.jpg") no-repeat center top;
+    background-size: 200% auto;
+ }
+#group_2 .parallax__layer--base{
+    height: 850px;
+    margin-top: 750px;
+    width: 100%;
+    background: #f6f6f6;
+}
+
+#group_4 .parallax__layer--base{
+    margin-top: 2100px;
+    width: 101%;
+    height: 650px;
+    background: #f6f6f6;
+}
+#group_1 {
+    height: 900px;
+    width: 100%;
+}
+#group_1 h1{
+    text-shadow: #666 1px 1px;
+    text-align: center;
+    margin-top: 200px;
+    color: white;
+    font-size: 40pt;
+}
+#group_1 p{
+    margin-top: 20px;
+    text-shadow: #666 1px 1px;
+    text-align: center;
+    color: white;
+    font-size: 14pt;
+}
+#group_4 {
+    width: 100%;
+}
+.skill{
+    display: inline-block;
+    width: 300px;
+    height: 300px;
+    text-align: center;
+}
+#skills {
+    text-align: center;
+    margin: 50px auto;
+    width: 90%;
+}
+.skill img{
+    width: 60%;
+}
+#menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    z-index: 1;
+    transition-duration: 0.5s;
+    opacity: 0.9;
+}
+#button{
+    width: 48px;
+    height: 36px;
+    background: url("http://site.my/img/menu.png");
+    position: absolute;
+    right: 50px;
+    top: 20px;
+    cursor: pointer;
+}
+#menu:hover{
+    background: #3a4b6f;
+}
+#group_3 h1{
+    text-shadow: #666 1px 1px;
+    text-align: center;
+    width: 100%;
+    margin-top: 50px;
+    font-size: 35pt;
+}
+#group_2 h1{
+    text-align: center;
+    width: 100%;
+    margin-top: 50px;
+    font-size: 35pt;
+    color: #56509a;
+}
+#group_3 p {
+    text-shadow: #666 1px 1px;
+    width: 100%;
+    margin: 30px auto;
+    text-align: center;
+    color: #fff;
+    font-size:  20px;
+    font-weight: bold;
+}
+.home-button{
+    width: 140px;
+    padding: 10px;
+    line-height: 25px;
+    margin: 50px auto;
+    background: #2095f2;
+    border-radius: 3px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    font-size: 14pt;
+    cursor: pointer;
+    transition-duration: 0.5s;
+}
+.home-button:hover{
+    background: #6c777f;
+}
+#group_3 .parallax__layer--back{
+    text-align: center;
+    height: 700px;
+    width: 105%;
+    background: url("http://livedemo00.template-help.com/wordpress_53677/wp-content/uploads/2015/04/parallax-2.jpg");
+    background-size: cover;
+    background-position: center;
+}
+#group_3 {
+    margin-top: 55%;
+    width:100%;
+}
+#top{
+    z-index: 500;
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    right: 50px;
+    bottom: 25px;
+    background: #08c url('http://site.my/img/up-arrow.png') no-repeat center center;
+    cursor: pointer;
+    display: none;
+    transition-duration: 0.5s;
+}
+#top:hover{
+    background: #666846 url('http://site.my/img/up-arrow.png') no-repeat center center;
+}
+#group_3 h1{
+    margin-top: 150px;
+    color: white;
+    font-size: 35px;
+    text-align: center;
+    text-shadow: #666 1px 1px;
+}
+#portfolio{
+    text-align: left;
+    overflow: hidden;
+    }
+.portfolio-site{
+    transition-duration: 0.5s;
+    display: inline-block;
+    width: 1000px;
+
+    cursor: pointer;
+    position:relative;
+    padding: 5px;
+    margin: 20px;
+    background: #f0f3f2;
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+.portfolio-site:before,
+.portfolio-site:after {
+    content:"";
+    position:absolute;
+    z-index:-2;
+}
+.portfolio-site:before {
+    top:0;
+    bottom:0;
+    left:10px;
+    right:10px;
+    -webkit-box-shadow:0 0 15px rgba(0,0,0,0.6);
+    -moz-box-shadow:0 0 15px rgba(0,0,0,0.6);
+    box-shadow:0 0 15px rgba(0,0,0,0.6);
+    -moz-border-radius:10px / 100px;
+    border-radius:10px / 100px;
+}
+.portfolio-site:hover{
+    background: #08c;
+}
+.portfolio-site img {
+    width: 100%;
+}
+#slider {
+    width: 600%;
+}
+#slider-content{
+    position: relative;
+    margin: 50px auto;
+    width: 1050px;
+}
+#slider-buttons{
+    text-align: center;
+}
+.slider-button{
+    width: 12px;
+    height: 12px;
+    border-radius:6px;
+    background: #08c;
+    display: inline-block;
+    cursor: pointer;
+}
+.slider-button:hover{
+    background: #fff;
+    width: 8px;
+    height: 8px;
+    border: 2px solid #08c;
+}
